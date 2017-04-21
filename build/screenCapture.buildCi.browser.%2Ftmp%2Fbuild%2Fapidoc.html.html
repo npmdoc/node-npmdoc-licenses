@@ -1,0 +1,2691 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>licenses (v0.0.20)</a>
+</h1>
+<h4>A small tool that detects licensing information for a given Node.js module</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses">module licenses</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.licenses">
+            function <span class="apidocSignatureSpan"></span>licenses
+            <span class="apidocSignatureSpan">(name, options, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content">
+            function <span class="apidocSignatureSpan">licenses.</span>Content
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine">
+            function <span class="apidocSignatureSpan">licenses.</span>Content.predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github">
+            function <span class="apidocSignatureSpan">licenses.</span>Github
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser">
+            function <span class="apidocSignatureSpan">licenses.</span>Parser
+            <span class="apidocSignatureSpan">(parsers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry">
+            function <span class="apidocSignatureSpan">licenses.</span>Registry
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.info">
+            function <span class="apidocSignatureSpan">licenses.</span>info
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.</span>Content.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.</span>Github.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.</span>Registry.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.</span>parsers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Content">module licenses.Content</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.Content">
+            function <span class="apidocSignatureSpan">licenses.</span>Content
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.extend">
+            function <span class="apidocSignatureSpan">licenses.Content.</span>extend
+            <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine">
+            function <span class="apidocSignatureSpan">licenses.Content.</span>predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.readable">
+            function <span class="apidocSignatureSpan">licenses.Content.</span>readable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.writable">
+            function <span class="apidocSignatureSpan">licenses.Content.</span>writable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Content.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Content.predefine">module licenses.Content.predefine</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.predefine">
+            function <span class="apidocSignatureSpan">licenses.Content.</span>predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.create">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>create
+            <span class="apidocSignatureSpan">(property, description, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.descriptor">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>descriptor
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.each">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>each
+            <span class="apidocSignatureSpan">(collection, iterator, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.extend">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>extend
+            <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.lazy">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>lazy
+            <span class="apidocSignatureSpan">(obj, prop, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.merge">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>merge
+            <span class="apidocSignatureSpan">(target, additional)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.mixin">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>mixin
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.predefine.remove">
+            function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>remove
+            <span class="apidocSignatureSpan">(obj, keep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Content.predefine.</span>READABLE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Content.predefine.</span>WRITABLE</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Content.prototype">module licenses.Content.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.prototype.constructor">
+            function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.prototype.get">
+            function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>get
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.prototype.parse">
+            function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>parse
+            <span class="apidocSignatureSpan">(data, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Content.prototype.supported">
+            function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>supported
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">licenses.Content.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Github">module licenses.Github</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.Github">
+            function <span class="apidocSignatureSpan">licenses.</span>Github
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.extend">
+            function <span class="apidocSignatureSpan">licenses.Github.</span>extend
+            <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.predefine">
+            function <span class="apidocSignatureSpan">licenses.Github.</span>predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.readable">
+            function <span class="apidocSignatureSpan">licenses.Github.</span>readable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.writable">
+            function <span class="apidocSignatureSpan">licenses.Github.</span>writable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Github.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Github.prototype">module licenses.Github.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.prototype.constructor">
+            function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.prototype.get">
+            function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.prototype.parse">
+            function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>parse
+            <span class="apidocSignatureSpan">(data, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Github.prototype.supported">
+            function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>supported
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Github.prototype.</span>filenames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">licenses.Github.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Parser">module licenses.Parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser.Parser">
+            function <span class="apidocSignatureSpan">licenses.</span>Parser
+            <span class="apidocSignatureSpan">(parsers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser.extend">
+            function <span class="apidocSignatureSpan">licenses.Parser.</span>extend
+            <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser.predefine">
+            function <span class="apidocSignatureSpan">licenses.Parser.</span>predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser.readable">
+            function <span class="apidocSignatureSpan">licenses.Parser.</span>readable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Parser.writable">
+            function <span class="apidocSignatureSpan">licenses.Parser.</span>writable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Registry">module licenses.Registry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.Registry">
+            function <span class="apidocSignatureSpan">licenses.</span>Registry
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.extend">
+            function <span class="apidocSignatureSpan">licenses.Registry.</span>extend
+            <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.predefine">
+            function <span class="apidocSignatureSpan">licenses.Registry.</span>predefine
+            <span class="apidocSignatureSpan">(obj, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.readable">
+            function <span class="apidocSignatureSpan">licenses.Registry.</span>readable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.writable">
+            function <span class="apidocSignatureSpan">licenses.Registry.</span>writable
+            <span class="apidocSignatureSpan">(method, description, clean)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">licenses.Registry.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.licenses.Registry.prototype">module licenses.Registry.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.prototype.constructor">
+            function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.prototype.get">
+            function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>get
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.prototype.license">
+            function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>license
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.prototype.parse">
+            function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>parse
+            <span class="apidocSignatureSpan">(data, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.licenses.Registry.prototype.supported">
+            function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>supported
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses" id="apidoc.module.licenses">module licenses</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.licenses" id="apidoc.element.licenses.licenses">
+        function <span class="apidocSignatureSpan"></span>licenses
+        <span class="apidocSignatureSpan">(name, options, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(name, options, fn) {
+  if ('function' === typeof options) {
+    fn = options;
+    options = null;
+  }
+
+  //
+  // Fix circular require.
+  //
+  if (!Registry) Registry = require('npm-registry');
+
+  options = options || {};
+  options.githulk = options.githulk || null;
+  options.order = options.order || ['registry', 'github', 'content'];
+  options.registry = options.registry || Registry.mirrors.nodejitsu;
+  options.npmjs = 'string' !== typeof options.registry
+    ? options.registry
+    : new Registry({
+    registry: options.registry || Registry.mirrors.nodejitsu,
+    githulk: options.githulk
+  });
+
+  async.waterfall([
+    //
+    // Make sure that we have the correct contents to start searching for
+    // license information.
+    //
+    function fetch(next) {
+      if ('string' !== typeof name) return next(undefined, name);
+
+      options.npmjs.packages.get(name, next);
+    },
+
+    //
+    // Search for the correct way of parsing out the license information.
+    //
+    function search(data, next) {
+      if (!options.order.length) return next();
+      if (Array.isArray(data)) data = data[0];
+
+      debug('searching for licensing information for %s', data.name);
+
+      var parser, result, name;
+
+      async.doWhilst(function does(next) {
+        name = options.order.shift();
+        parser = parse.parsers[name];
+
+        if (!parser.supported(data)) return next();
+
+        debug('attempting to extract the license information using: %s', name);
+
+        parser.parse(data, options, function parsed(err, license) {
+          if (err) return next();
+
+          result = license;
+          if (result) debug('parsing with %s was successful', name);
+
+          next();
+        });
+      }, function select() {
+        return !result &amp;&amp; options.order.length;
+      }, function cleanup(err) {
+        options = null;
+        next(err, result, name);
+      });
+    }
+  ], fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content" id="apidoc.element.licenses.Content">
+        function <span class="apidocSignatureSpan">licenses.</span>Content
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parse.Github  = require('./github');    // Parse license info from github.
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.Registry(parse.parsers);
+parse.parsers.content   = new parse.<span class="apidocCodeKeywordSpan">Content</span>(parse.parsers);
+parse.parsers.github    = new parse.Github(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine" id="apidoc.element.licenses.Content.predefine">
+        function <span class="apidocSignatureSpan">licenses.</span>Content.predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github" id="apidoc.element.licenses.Github">
+        function <span class="apidocSignatureSpan">licenses.</span>Github
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.Registry(parse.parsers);
+parse.parsers.content   = new parse.Content(parse.parsers);
+parse.parsers.github    = new parse.<span class="apidocCodeKeywordSpan">Github</span>(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser" id="apidoc.element.licenses.Parser">
+        function <span class="apidocSignatureSpan">licenses.</span>Parser
+        <span class="apidocSignatureSpan">(parsers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser(parsers) {
+  if (!(this instanceof Parser)) return new Parser(parsers);
+
+  this.parsers = parsers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry" id="apidoc.element.licenses.Registry">
+        function <span class="apidocSignatureSpan">licenses.</span>Registry
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parse.Parser  = require('./parser');    // Base parser class.
+parse.Github  = require('./github');    // Parse license info from github.
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.<span class="apidocCodeKeywordSpan">Registry</span>(parse.parsers);
+parse.parsers.content   = new parse.Content(parse.parsers);
+parse.parsers.github    = new parse.Github(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.info" id="apidoc.element.licenses.info">
+        function <span class="apidocSignatureSpan">licenses.</span>info
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function info(name) {
+  return opensource.licenses[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Content" id="apidoc.module.licenses.Content">module licenses.Content</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.Content" id="apidoc.element.licenses.Content.Content">
+        function <span class="apidocSignatureSpan">licenses.</span>Content
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parse.Github  = require('./github');    // Parse license info from github.
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.Registry(parse.parsers);
+parse.parsers.content   = new parse.<span class="apidocCodeKeywordSpan">Content</span>(parse.parsers);
+parse.parsers.github    = new parse.Github(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.extend" id="apidoc.element.licenses.Content.extend">
+        function <span class="apidocSignatureSpan">licenses.Content.</span>extend
+        <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(protoProps, staticProps) {
+  var parent = this
+    , child;
+
+  //
+  // The constructor function for the new subclass is either defined by you
+  // (the "constructor" property in your `extend` definition), or defaulted
+  // by us to simply call the parent's constructor.
+  //
+  if (protoProps &amp;&amp; has.call(protoProps, 'constructor')) {
+    child = protoProps.constructor;
+  } else {
+    child = mode(parent);
+  }
+
+  //
+  // Set the prototype chain to inherit from `parent`, without calling
+  // `parent`'s constructor function.
+  //
+  function Surrogate() {
+    this.constructor = child;
+  }
+
+  Surrogate.prototype = parent.prototype;
+  child.prototype = new Surrogate;
+
+  //
+  // Add prototype properties (instance properties) to the subclass,
+  // if supplied.
+  //
+  if (protoProps) mixin(child.prototype, protoProps);
+
+  //
+  // Add static properties to the constructor function, if supplied.
+  //
+  copypaste(child, parent, staticProps);
+
+  //
+  // Set a convenience property in case the parent's prototype is needed later.
+  //
+  child.__super__ = parent.prototype;
+
+  return child;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine" id="apidoc.element.licenses.Content.predefine">
+        function <span class="apidocSignatureSpan">licenses.Content.</span>predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.readable" id="apidoc.element.licenses.Content.readable">
+        function <span class="apidocSignatureSpan">licenses.Content.</span>readable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.writable" id="apidoc.element.licenses.Content.writable">
+        function <span class="apidocSignatureSpan">licenses.Content.</span>writable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Content.predefine" id="apidoc.module.licenses.Content.predefine">module licenses.Content.predefine</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.predefine" id="apidoc.element.licenses.Content.predefine.predefine">
+        function <span class="apidocSignatureSpan">licenses.Content.</span>predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.create" id="apidoc.element.licenses.Content.predefine.create">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>create
+        <span class="apidocSignatureSpan">(property, description, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(property, description, pattern) {
+  pattern = pattern || {};
+
+  if (!predefine.descriptor(description)) description = {
+    enumberable: false,
+    value: description
+  };
+
+  var definition = {};
+  definition[property] = predefine.mixin(pattern, description);
+
+  return definition;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Contains a mapping for license id -&gt; license name.
+*
+* @type {Object}
+* @public
+*/
+exports.types = Object.<span class="apidocCodeKeywordSpan">create</span>(null);
+
+/**
+* Contains a mapping for license name -&gt; license object.
+*
+* @type {Object}
+* @public
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.descriptor" id="apidoc.element.licenses.Content.predefine.descriptor">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>descriptor
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function descriptor(obj) {
+  if (!obj || 'object' !== typeof obj || Array.isArray(obj)) return false;
+
+  var keys = Object.keys(obj);
+
+  //
+  // A descriptor can only be a data or accessor descriptor, never both.
+  // An data descriptor can only specify:
+  //
+  // - configurable
+  // - enumerable
+  // - (optional) value
+  // - (optional) writable
+  //
+  // And an accessor descriptor can only specify;
+  //
+  // - configurable
+  // - enumerable
+  // - (optional) get
+  // - (optional) set
+  //
+  if (
+       ('value' in obj || 'writable' in obj)
+    &amp;&amp; ('function' === typeof obj.set || 'function' === typeof obj.get)
+  ) return false;
+
+  return !!keys.length &amp;&amp; keys.every(function allowed(key) {
+    var type = description[key]
+      , valid = type === undefined || is(obj[key], type);
+
+    return key in description &amp;&amp; valid;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.each" id="apidoc.element.licenses.Content.predefine.each">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>each
+        <span class="apidocSignatureSpan">(collection, iterator, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function each(collection, iterator, context) {
+  if (arguments.length === 1) {
+    iterator = collection;
+    collection = this;
+  }
+
+  var isArray = Array.isArray(collection || this)
+    , length = collection.length
+    , i = 0
+    , value;
+
+  if (context) {
+    if (isArray) {
+      for (; i &lt; length; i++) {
+        value = iterator.apply(collection[ i ], context);
+        if (value === false) break;
+      }
+    } else {
+      for (i in collection) {
+        value = iterator.apply(collection[ i ], context);
+        if (value === false) break;
+      }
+    }
+  } else {
+    if (isArray) {
+      for (; i &lt; length; i++) {
+        value = iterator.call(collection[i], i, collection[i]);
+        if (value === false) break;
+      }
+    } else {
+      for (i in collection) {
+        value = iterator.call(collection[i], i, collection[i]);
+        if (value === false) break;
+      }
+    }
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.extend" id="apidoc.element.licenses.Content.predefine.extend">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>extend
+        <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(protoProps, staticProps) {
+  var parent = this
+    , child;
+
+  //
+  // The constructor function for the new subclass is either defined by you
+  // (the "constructor" property in your `extend` definition), or defaulted
+  // by us to simply call the parent's constructor.
+  //
+  if (protoProps &amp;&amp; has.call(protoProps, 'constructor')) {
+    child = protoProps.constructor;
+  } else {
+    child = mode(parent);
+  }
+
+  //
+  // Set the prototype chain to inherit from `parent`, without calling
+  // `parent`'s constructor function.
+  //
+  function Surrogate() {
+    this.constructor = child;
+  }
+
+  Surrogate.prototype = parent.prototype;
+  child.prototype = new Surrogate;
+
+  //
+  // Add prototype properties (instance properties) to the subclass,
+  // if supplied.
+  //
+  if (protoProps) mixin(child.prototype, protoProps);
+
+  //
+  // Add static properties to the constructor function, if supplied.
+  //
+  copypaste(child, parent, staticProps);
+
+  //
+  // Set a convenience property in case the parent's prototype is needed later.
+  //
+  child.__super__ = parent.prototype;
+
+  return child;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.lazy" id="apidoc.element.licenses.Content.predefine.lazy">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>lazy
+        <span class="apidocSignatureSpan">(obj, prop, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lazy(obj, prop, fn) {
+  Object.defineProperty(obj, prop, {
+    configurable: true,
+
+    get: function get() {
+      return Object.defineProperty(this, prop, {
+        value: fn.call(this)
+      })[prop];
+    },
+
+    set: function set(value) {
+      return Object.defineProperty(this, prop, {
+        value: value
+      })[prop];
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.merge" id="apidoc.element.licenses.Content.predefine.merge">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>merge
+        <span class="apidocSignatureSpan">(target, additional)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function merge(target, additional) {
+  var result = target
+    , undefined;
+
+  if (Array.isArray(target)) {
+    each(additional, function arrayForEach(index) {
+      if (JSON.stringify(target).indexOf(JSON.stringify(additional[index])) === -1) {
+        result.push(additional[index]);
+      }
+    });
+  } else if ('object' === typeof target) {
+    each(additional, function objectForEach(key, value) {
+      if (target[key] === undefined) {
+        result[key] = value;
+      } else {
+        result[key] = merge(target[key], additional[key]);
+      }
+    });
+  } else {
+    result = additional;
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.mixin" id="apidoc.element.licenses.Content.predefine.mixin">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>mixin
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(target) {
+  Array.prototype.slice.call(arguments, 1).forEach(function forEach(o) {
+    Object.getOwnPropertyNames(o).forEach(function eachAttr(attr) {
+      Object.defineProperty(target, attr, Object.getOwnPropertyDescriptor(o, attr));
+    });
+  });
+
+  return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.predefine.remove" id="apidoc.element.licenses.Content.predefine.remove">
+        function <span class="apidocSignatureSpan">licenses.Content.predefine.</span>remove
+        <span class="apidocSignatureSpan">(obj, keep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function remove(obj, keep) {
+  if (!obj) return false;
+  keep = keep || [];
+
+  for (var prop in obj) {
+    if (has.call(obj, prop) &amp;&amp; !~keep.indexOf(prop)) {
+      delete obj[prop];
+    }
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Content.prototype" id="apidoc.module.licenses.Content.prototype">module licenses.Content.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.prototype.constructor" id="apidoc.element.licenses.Content.prototype.constructor">
+        function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.prototype.get" id="apidoc.element.licenses.Content.prototype.get">
+        function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>get
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(data) {
+  if ('string' === typeof data) return { content: data };
+  if (data.readme) return { content: data.readme, file: 'readme' };
+  if (data.content) return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//
+// Make sure that we have the correct contents to start searching for
+// license information.
+//
+function fetch(next) {
+  if ('string' !== typeof name) return next(undefined, name);
+
+  options.npmjs.packages.<span class="apidocCodeKeywordSpan">get</span>(name, next);
+},
+
+//
+// Search for the correct way of parsing out the license information.
+//
+function search(data, next) {
+  if (!options.order.length) return next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.prototype.parse" id="apidoc.element.licenses.Content.prototype.parse">
+        function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>parse
+        <span class="apidocSignatureSpan">(data, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(data, options, next) {
+  data = this.get(data);
+
+  if ('function' === typeof options) {
+    next = options;
+    options = {};
+  }
+
+  //
+  // We cannot detect a license so we call the callback without any arguments
+  // which symbolises a failed attempt.
+  //
+  if (!data) return next();
+
+  //
+  // Optimize the matches by trying to locate where the licensing information
+  // starts in the given content. Usually, we, as developers add it at the
+  // bottom of our README.md files and prefix it with "LICENSE" as header.
+  //
+  if (data.file &amp;&amp; /readme/i.test(data.file)) {
+    data.content.split('\n')
+      .some(function some(line, index, lines) {
+        if (
+          /^.{0,7}\s{0,}(?:licen[cs]e[s]?|copyright).{0,2}\s{0,}$/gim.test(
+            line.trim())
+        ) {
+          data.content = lines.slice(index).join('\n');
+          debug('matched %s as license header, slicing data', JSON.stringify(line));
+        return true;
+      }
+
+      return false;
+    });
+  }
+
+  var license = this.scan(data.content);
+  if (!license) {
+    license = this.test(data.content);
+
+    if (license) debug('used regexp to detect %s in content', license);
+  } else {
+    debug('license file scan resulted in %s as matching license', license);
+  }
+
+
+  next(undefined, this.normalize(license));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+name = options.order.shift();
+parser = parse.parsers[name];
+
+if (!parser.supported(data)) return next();
+
+debug('attempting to extract the license information using: %s', name);
+
+parser.<span class="apidocCodeKeywordSpan">parse</span>(data, options, function parsed(err, license) {
+  if (err) return next();
+
+  result = license;
+  if (result) debug('parsing with %s was successful', name);
+
+  next();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Content.prototype.supported" id="apidoc.element.licenses.Content.prototype.supported">
+        function <span class="apidocSignatureSpan">licenses.Content.prototype.</span>supported
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function supported(data) {
+  return !!this.get(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      var parser, result, name;
+
+      async.doWhilst(function does(next) {
+        name = options.order.shift();
+        parser = parse.parsers[name];
+
+        if (!parser.<span class="apidocCodeKeywordSpan">supported</span>(data)) return next();
+
+        debug('attempting to extract the license information using: %s', name);
+
+        parser.parse(data, options, function parsed(err, license) {
+if (err) return next();
+
+result = license;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Github" id="apidoc.module.licenses.Github">module licenses.Github</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.Github" id="apidoc.element.licenses.Github.Github">
+        function <span class="apidocSignatureSpan">licenses.</span>Github
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.Registry(parse.parsers);
+parse.parsers.content   = new parse.Content(parse.parsers);
+parse.parsers.github    = new parse.<span class="apidocCodeKeywordSpan">Github</span>(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.extend" id="apidoc.element.licenses.Github.extend">
+        function <span class="apidocSignatureSpan">licenses.Github.</span>extend
+        <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(protoProps, staticProps) {
+  var parent = this
+    , child;
+
+  //
+  // The constructor function for the new subclass is either defined by you
+  // (the "constructor" property in your `extend` definition), or defaulted
+  // by us to simply call the parent's constructor.
+  //
+  if (protoProps &amp;&amp; has.call(protoProps, 'constructor')) {
+    child = protoProps.constructor;
+  } else {
+    child = mode(parent);
+  }
+
+  //
+  // Set the prototype chain to inherit from `parent`, without calling
+  // `parent`'s constructor function.
+  //
+  function Surrogate() {
+    this.constructor = child;
+  }
+
+  Surrogate.prototype = parent.prototype;
+  child.prototype = new Surrogate;
+
+  //
+  // Add prototype properties (instance properties) to the subclass,
+  // if supplied.
+  //
+  if (protoProps) mixin(child.prototype, protoProps);
+
+  //
+  // Add static properties to the constructor function, if supplied.
+  //
+  copypaste(child, parent, staticProps);
+
+  //
+  // Set a convenience property in case the parent's prototype is needed later.
+  //
+  child.__super__ = parent.prototype;
+
+  return child;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.predefine" id="apidoc.element.licenses.Github.predefine">
+        function <span class="apidocSignatureSpan">licenses.Github.</span>predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.readable" id="apidoc.element.licenses.Github.readable">
+        function <span class="apidocSignatureSpan">licenses.Github.</span>readable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.writable" id="apidoc.element.licenses.Github.writable">
+        function <span class="apidocSignatureSpan">licenses.Github.</span>writable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Github.prototype" id="apidoc.module.licenses.Github.prototype">module licenses.Github.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.prototype.constructor" id="apidoc.element.licenses.Github.prototype.constructor">
+        function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.prototype.get" id="apidoc.element.licenses.Github.prototype.get">
+        function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+  return this.githulk.project.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//
+// Make sure that we have the correct contents to start searching for
+// license information.
+//
+function fetch(next) {
+  if ('string' !== typeof name) return next(undefined, name);
+
+  options.npmjs.packages.<span class="apidocCodeKeywordSpan">get</span>(name, next);
+},
+
+//
+// Search for the correct way of parsing out the license information.
+//
+function search(data, next) {
+  if (!options.order.length) return next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.prototype.parse" id="apidoc.element.licenses.Github.prototype.parse">
+        function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>parse
+        <span class="apidocSignatureSpan">(data, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(data, options, next) {
+  data = this.get(data);
+
+  if ('function' === typeof options) {
+    next = options;
+    options = {};
+  }
+
+  //
+  // We cannot detect a license so we call the callback without any arguments
+  // which symbolises a failed attempt.
+  //
+  if (!data) return next();
+
+  var githulk = options.githulk || this.githulk
+    , project = data.user +'/'+ data.repo
+    , parser = this;
+
+  githulk.repository.moved(project, function moved(err, github, changed) {
+    if (err) return next(err);
+    if (changed) project = github.user +'/'+ github.repo;
+
+    githulk.repository.contents(project, function contents(err, files) {
+      if (err || !files || !files.length) return next(err);
+
+      //
+      // Check if we have any compatible.
+      //
+      files = files.filter(function filter(file) {
+        var name = file.name.toLowerCase();
+
+        // No size, not really useful for matching.
+        if (file.size &lt;= 0) return false;
+
+        // Fast case, direct match.
+        if (!!~parser.filenames.indexOf(name)) return true;
+
+        // Slow case, partial match.
+        return parser.filenames.some(function some(filename) {
+          return !!~name.indexOf(filename);
+        });
+      }).sort(function sort(a, b) {
+        if (a.name &gt; b.name) return 1;
+        if (b.name &lt; b.name) return -1;
+        return 0;
+      });
+
+      if (!files.length) return next();
+
+      //
+      // Stored the matching license.
+      //
+      var license;
+
+      //
+      // Fetch and parse the 'raw' content of the file so we can parse it.
+      //
+      parser.async.doWhilst(function does(next) {
+        var file = files.shift();
+
+        debug('searching %s for license information', file.name);
+
+        githulk.repository.raw(project, {
+          path: file.name
+        }, function raw(err, data) {
+          if (err) return next(err);
+
+          parser.parsers.content.parse({
+            content: Array.isArray(data) ? data[0] : data,
+            file: file.name
+          }, function parse(err, data) {
+            license = data;
+
+            if (license) debug('extracted %s from %s', data, file.name);
+            next(err);
+          });
+        });
+      }, function select() {
+        return !license &amp;&amp; files.length;
+      }, function done(err) {
+        next(err, license);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+name = options.order.shift();
+parser = parse.parsers[name];
+
+if (!parser.supported(data)) return next();
+
+debug('attempting to extract the license information using: %s', name);
+
+parser.<span class="apidocCodeKeywordSpan">parse</span>(data, options, function parsed(err, license) {
+  if (err) return next();
+
+  result = license;
+  if (result) debug('parsing with %s was successful', name);
+
+  next();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Github.prototype.supported" id="apidoc.element.licenses.Github.prototype.supported">
+        function <span class="apidocSignatureSpan">licenses.Github.prototype.</span>supported
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function supported(data) {
+  return !!this.get(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      var parser, result, name;
+
+      async.doWhilst(function does(next) {
+        name = options.order.shift();
+        parser = parse.parsers[name];
+
+        if (!parser.<span class="apidocCodeKeywordSpan">supported</span>(data)) return next();
+
+        debug('attempting to extract the license information using: %s', name);
+
+        parser.parse(data, options, function parsed(err, license) {
+if (err) return next();
+
+result = license;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Parser" id="apidoc.module.licenses.Parser">module licenses.Parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser.Parser" id="apidoc.element.licenses.Parser.Parser">
+        function <span class="apidocSignatureSpan">licenses.</span>Parser
+        <span class="apidocSignatureSpan">(parsers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser(parsers) {
+  if (!(this instanceof Parser)) return new Parser(parsers);
+
+  this.parsers = parsers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser.extend" id="apidoc.element.licenses.Parser.extend">
+        function <span class="apidocSignatureSpan">licenses.Parser.</span>extend
+        <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(protoProps, staticProps) {
+  var parent = this
+    , child;
+
+  //
+  // The constructor function for the new subclass is either defined by you
+  // (the "constructor" property in your `extend` definition), or defaulted
+  // by us to simply call the parent's constructor.
+  //
+  if (protoProps &amp;&amp; has.call(protoProps, 'constructor')) {
+    child = protoProps.constructor;
+  } else {
+    child = mode(parent);
+  }
+
+  //
+  // Set the prototype chain to inherit from `parent`, without calling
+  // `parent`'s constructor function.
+  //
+  function Surrogate() {
+    this.constructor = child;
+  }
+
+  Surrogate.prototype = parent.prototype;
+  child.prototype = new Surrogate;
+
+  //
+  // Add prototype properties (instance properties) to the subclass,
+  // if supplied.
+  //
+  if (protoProps) mixin(child.prototype, protoProps);
+
+  //
+  // Add static properties to the constructor function, if supplied.
+  //
+  copypaste(child, parent, staticProps);
+
+  //
+  // Set a convenience property in case the parent's prototype is needed later.
+  //
+  child.__super__ = parent.prototype;
+
+  return child;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser.predefine" id="apidoc.element.licenses.Parser.predefine">
+        function <span class="apidocSignatureSpan">licenses.Parser.</span>predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser.readable" id="apidoc.element.licenses.Parser.readable">
+        function <span class="apidocSignatureSpan">licenses.Parser.</span>readable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Parser.writable" id="apidoc.element.licenses.Parser.writable">
+        function <span class="apidocSignatureSpan">licenses.Parser.</span>writable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Registry" id="apidoc.module.licenses.Registry">module licenses.Registry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.Registry" id="apidoc.element.licenses.Registry.Registry">
+        function <span class="apidocSignatureSpan">licenses.</span>Registry
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parse.Parser  = require('./parser');    // Base parser class.
+parse.Github  = require('./github');    // Parse license info from github.
+
+//
+// Expose our primary parsers that we can leverage to retrieve license content.
+//
+parse.parsers = {};
+parse.parsers.registry  = new parse.<span class="apidocCodeKeywordSpan">Registry</span>(parse.parsers);
+parse.parsers.content   = new parse.Content(parse.parsers);
+parse.parsers.github    = new parse.Github(parse.parsers);
+
+//
+// Expose the actual module.
+//
+module.exports = parse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.extend" id="apidoc.element.licenses.Registry.extend">
+        function <span class="apidocSignatureSpan">licenses.Registry.</span>extend
+        <span class="apidocSignatureSpan">(protoProps, staticProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(protoProps, staticProps) {
+  var parent = this
+    , child;
+
+  //
+  // The constructor function for the new subclass is either defined by you
+  // (the "constructor" property in your `extend` definition), or defaulted
+  // by us to simply call the parent's constructor.
+  //
+  if (protoProps &amp;&amp; has.call(protoProps, 'constructor')) {
+    child = protoProps.constructor;
+  } else {
+    child = mode(parent);
+  }
+
+  //
+  // Set the prototype chain to inherit from `parent`, without calling
+  // `parent`'s constructor function.
+  //
+  function Surrogate() {
+    this.constructor = child;
+  }
+
+  Surrogate.prototype = parent.prototype;
+  child.prototype = new Surrogate;
+
+  //
+  // Add prototype properties (instance properties) to the subclass,
+  // if supplied.
+  //
+  if (protoProps) mixin(child.prototype, protoProps);
+
+  //
+  // Add static properties to the constructor function, if supplied.
+  //
+  copypaste(child, parent, staticProps);
+
+  //
+  // Set a convenience property in case the parent's prototype is needed later.
+  //
+  child.__super__ = parent.prototype;
+
+  return child;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.predefine" id="apidoc.element.licenses.Registry.predefine">
+        function <span class="apidocSignatureSpan">licenses.Registry.</span>predefine
+        <span class="apidocSignatureSpan">(obj, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefine(obj, pattern) {
+  pattern = pattern || predefine.READABLE;
+
+  return function predefined(method, description, clean) {
+    //
+    // If we are given a description compatible Object, use that instead of
+    // setting it as value. This allows easy creation of getters and setters.
+    //
+    if (
+         !predefine.descriptor(description)
+      || is(description, 'object')
+         &amp;&amp; !clean
+         &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+    ) { description = {
+        value: description
+      };
+    }
+
+    //
+    // Prevent thrown errors when we attempt to override a readonly
+    // property
+    //
+    var described = Object.getOwnPropertyDescriptor(obj, method);
+    if (described &amp;&amp; !described.configurable) {
+      return predefined;
+    }
+
+    Object.defineProperty(obj, method, !clean
+      ? predefine.mixin({}, pattern, description)
+      : description
+    );
+
+    return predefined;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.readable" id="apidoc.element.licenses.Registry.readable">
+        function <span class="apidocSignatureSpan">licenses.Registry.</span>readable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.writable" id="apidoc.element.licenses.Registry.writable">
+        function <span class="apidocSignatureSpan">licenses.Registry.</span>writable
+        <span class="apidocSignatureSpan">(method, description, clean)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function predefined(method, description, clean) {
+  //
+  // If we are given a description compatible Object, use that instead of
+  // setting it as value. This allows easy creation of getters and setters.
+  //
+  if (
+       !predefine.descriptor(description)
+    || is(description, 'object')
+       &amp;&amp; !clean
+       &amp;&amp; !predefine.descriptor(predefine.mixin({}, pattern, description))
+  ) { description = {
+      value: description
+    };
+  }
+
+  //
+  // Prevent thrown errors when we attempt to override a readonly
+  // property
+  //
+  var described = Object.getOwnPropertyDescriptor(obj, method);
+  if (described &amp;&amp; !described.configurable) {
+    return predefined;
+  }
+
+  Object.defineProperty(obj, method, !clean
+    ? predefine.mixin({}, pattern, description)
+    : description
+  );
+
+  return predefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.licenses.Registry.prototype" id="apidoc.module.licenses.Registry.prototype">module licenses.Registry.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.prototype.constructor" id="apidoc.element.licenses.Registry.prototype.constructor">
+        function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+  'use strict';
+
+  return parent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.prototype.get" id="apidoc.element.licenses.Registry.prototype.get">
+        function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>get
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(data) {
+  var parser = this
+    , matches = [];
+
+  //
+  // Another npm oddity, it allows licenses to be specified in to different
+  // properties. Because why the fuck not?
+  //
+  ['license', 'licenses'].forEach(function each(key) {
+    if ('string' === typeof data[key]) {
+      return matches.push(data[key]);
+    }
+
+    if (Array.isArray(data[key])) {
+      return Array.prototype.push.apply(
+        matches,
+        data[key].map(function map(item) {
+          return parser.license(item);
+        }).filter(Boolean)
+      );
+    }
+
+    if ('object' === typeof data[key] &amp;&amp; parser.license(data[key])) {
+      return Array.prototype.push.apply(
+        matches,
+        [parser.license(data[key])]
+      );
+    }
+  });
+
+  if (matches.length) return matches;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//
+// Make sure that we have the correct contents to start searching for
+// license information.
+//
+function fetch(next) {
+  if ('string' !== typeof name) return next(undefined, name);
+
+  options.npmjs.packages.<span class="apidocCodeKeywordSpan">get</span>(name, next);
+},
+
+//
+// Search for the correct way of parsing out the license information.
+//
+function search(data, next) {
+  if (!options.order.length) return next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.prototype.license" id="apidoc.element.licenses.Registry.prototype.license">
+        function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>license
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function licenses(data) {
+  if ('string' === typeof data &amp;&amp; data) return data;
+  if ('type' in data &amp;&amp; data.type) return data.type;
+
+  //
+  // Common typo's
+  //
+  if ('type:' in data &amp;&amp; data['type:']) return data['type:'];
+
+  return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.prototype.parse" id="apidoc.element.licenses.Registry.prototype.parse">
+        function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>parse
+        <span class="apidocSignatureSpan">(data, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(data, options, next) {
+  data = this.get(data);
+
+  if ('function' === typeof options) {
+    next = options;
+    options = {};
+  }
+
+  //
+  // We cannot detect a license so we call the callback without any arguments
+  // which symbolises a failed attempt.
+  //
+  if (!data) return next();
+
+  debug('found %s in the package contents', data);
+
+  // @TODO handle the edge case where people give us an URL instead of an
+  // actual license.
+  next(undefined, this.normalize(data));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+name = options.order.shift();
+parser = parse.parsers[name];
+
+if (!parser.supported(data)) return next();
+
+debug('attempting to extract the license information using: %s', name);
+
+parser.<span class="apidocCodeKeywordSpan">parse</span>(data, options, function parsed(err, license) {
+  if (err) return next();
+
+  result = license;
+  if (result) debug('parsing with %s was successful', name);
+
+  next();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.licenses.Registry.prototype.supported" id="apidoc.element.licenses.Registry.prototype.supported">
+        function <span class="apidocSignatureSpan">licenses.Registry.prototype.</span>supported
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function supported(data) {
+  return !!this.get(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      var parser, result, name;
+
+      async.doWhilst(function does(next) {
+        name = options.order.shift();
+        parser = parse.parsers[name];
+
+        if (!parser.<span class="apidocCodeKeywordSpan">supported</span>(data)) return next();
+
+        debug('attempting to extract the license information using: %s', name);
+
+        parser.parse(data, options, function parsed(err, license) {
+if (err) return next();
+
+result = license;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
